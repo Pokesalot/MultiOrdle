@@ -4,7 +4,7 @@ cd $PSScriptRoot
 $Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 $dict = @{
-    "" = @(3,1,1,1,1,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
+    #"null" = @(3,1,1,1,1,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
     #The only 1-letter words are A and I
     #Values are bitwise representations
         #MSB is whether the current last letter makes a word
@@ -13,6 +13,7 @@ $dict = @{
         #e.g. at $dict["wor"] the 's' position will be 1 (not a word, but the start of "worse")
                              #the 'd' position will be 3 (word is a word, and the start of "words")
                              #the 'a' position will be 0 (not a word or the start of one)
+    #This feature is temporarily out of action until I can decide what I want the key to be for 0-letter words
 }
 
 function AddWordToDict($ArrayOfLetters){
